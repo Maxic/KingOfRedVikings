@@ -18,20 +18,21 @@ shader_param/sine_wave_size = 0.1
 
 [node name="Main" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="dingy" type="KinematicBody2D" parent="."]
 script = ExtResource( 2 )
+speed = 80
+turn_speed = 0.021
 
 [node name="dingy" type="Sprite" parent="dingy"]
-position = Vector2( 113.31, 58.5673 )
 scale = Vector2( 0.337164, 0.337164 )
 z_index = 10
 texture = ExtResource( 1 )
 
+[node name="Camera2D" type="Camera2D" parent="dingy"]
+current = true
+
 [node name="sea" type="Sprite" parent="."]
 material = SubResource( 2 )
-position = Vector2( 130.272, 123.24 )
+position = Vector2( 0.131577, 1.69442 )
 scale = Vector2( 0.378458, 0.249929 )
 texture = ExtResource( 3 )
-offset = Vector2( -25, -175 )
