@@ -13,7 +13,7 @@ shader_param/aspect_ratio = 0.666667
 
 [node name="sea" type="Sprite" parent="."]
 material = SubResource( 1 )
-position = Vector2( 1204.48, 808.846 )
+position = Vector2( 1200, 800 )
 scale = Vector2( 37.5, 25 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
