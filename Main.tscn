@@ -22,6 +22,6 @@ position = Vector2( 500, 500 )
 
 [node name="sea" type="Sprite" parent="."]
 material = SubResource( 1 )
-position = Vector2( -26.7097, -161.003 )
+position = Vector2( 9.75515, 76.7177 )
 scale = Vector2( 3.96731, 2.35656 )
 texture = ExtResource( 3 )
