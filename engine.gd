@@ -1,11 +1,23 @@
 extends RigidBody2D
 
-export var thrust = 2500
+export var thrust = 1500
 var direction: Vector2 = Vector2(0,0)
-var torque = 6000
+var torque = 1000
+
 
 func _ready():
 	pass
+	
+func _process(delta):
+	
+	if Input.is_action_pressed("ui_left"):
+		$BoatSprite.play("left")
+	if Input.is_action_pressed("ui_right"):
+		$BoatSprite.play("right")
+	if Input.is_action_pressed("boost"):
+		$BoatSprite.play("boost")	
+	if Input.is_action_just_released("boost") or Input.is_action_just_released("ui_left") or Input.is_action_just_released("ui_right") :
+		$BoatSprite.play("normal")
 
 func _integrate_forces(state):
 	direction.y = Input.is_action_pressed("ui_up")
