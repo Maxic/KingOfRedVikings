@@ -1,8 +1,8 @@
 extends RigidBody2D
 
-export var thrust = 3500
+export var thrust = 3000
 var direction: Vector2 = Vector2(0,0)
-var torque = 500
+var torque = 8000
 
 func _ready():
 	pass
@@ -18,4 +18,8 @@ func _integrate_forces(state):
 		rotation_dir += 1
 	if Input.is_action_pressed("ui_left"):
 		rotation_dir -= 1
-	applied_torque = rotation_dir * torque
+	
+	if direction.y != 0:
+		applied_torque = rotation_dir * torque
+	else:
+		applied_torque = 0
