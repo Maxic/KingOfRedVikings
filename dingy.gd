@@ -23,9 +23,9 @@ func _process(delta):
 	print("current rot: " + str(transform.get_rotation()))
 	print("calculated: " + str(calc_rotation(direction.x)))
 	rotate(calc_rotation(direction.x))
+	
 	# Apply movement
 	var movement = speed * direction * delta
-# warning-ignore:return_value_discarded
 	move_and_collide(movement)
 
 func calc_rotation(vert_direction):

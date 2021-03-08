@@ -19,11 +19,6 @@ config/name="KingOfRedVikings"
 run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
-[display]
-
-window/size/width=240
-window/size/height=160
-
 [rendering]
 
 environment/default_environment="res://default_env.tres"
