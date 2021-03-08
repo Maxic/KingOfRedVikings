@@ -1,23 +1,31 @@
 extends RigidBody2D
 
 export var thrust = 1500
+export var torque = 1000
+var fast_threshold = 150
 var direction: Vector2 = Vector2(0,0)
-var torque = 1000
-
 
 func _ready():
 	pass
 	
 func _process(delta):
-	
-	if Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("ui_left") and going_fast(linear_velocity):
 		$BoatSprite.play("left")
-	if Input.is_action_pressed("ui_right"):
+	elif Input.is_action_pressed("ui_right")and going_fast(linear_velocity):
 		$BoatSprite.play("right")
-	if Input.is_action_pressed("boost"):
+	elif Input.is_action_pressed("boost") and Input.is_action_pressed("ui_up"):
 		$BoatSprite.play("boost")	
-	if Input.is_action_just_released("boost") or Input.is_action_just_released("ui_left") or Input.is_action_just_released("ui_right") :
+	else:
 		$BoatSprite.play("normal")
+	#if not Input.is_action_pressed("boost") and not Input.is_action_pressed("ui_left") and not Input.is_action_pressed("ui_right") :
+	#	$BoatSprite.play("normal")
+
+func going_fast(velocity):
+	if velocity.x > fast_threshold or velocity.x < -fast_threshold:
+		return true
+	if velocity.y > fast_threshold or velocity.y < -fast_threshold:
+		return true
+	return false
 
 func _integrate_forces(state):
 	direction.y = Input.is_action_pressed("ui_up")
