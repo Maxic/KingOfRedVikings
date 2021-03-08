@@ -11,6 +11,10 @@ func _integrate_forces(state):
 	direction.y = Input.is_action_pressed("ui_up")
 	var thrust_vec = Vector2(0, thrust*-1) * direction.y
 
+	if Input.is_action_pressed("boost"):
+		thrust_vec = thrust_vec * 5
+		torque = 12000
+
 	applied_force = thrust_vec.rotated(rotation)
 
 	var rotation_dir = 0
