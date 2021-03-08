@@ -9,4 +9,3 @@
 position = Vector2( 120, 80 )
 
 [node name="sea" parent="." instance=ExtResource( 2 )]
-position = Vector2( -0.202911, -0.15745 )

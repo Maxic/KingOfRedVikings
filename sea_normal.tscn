@@ -4,15 +4,15 @@
 [ext_resource path="res://sea.gd" type="Script" id=2]
 [ext_resource path="res://sea_normal.shader" type="Shader" id=3]
 
-[sub_resource type="ShaderMaterial" id=2]
+[sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 3 )
 shader_param/tile_factor = Vector2( 37.5, 25 )
-shader_param/aspect_ratio = 0.66799
+shader_param/aspect_ratio = 0.666667
 
 [node name="sea" type="Node2D"]
 
 [node name="sea" type="Sprite" parent="."]
-material = SubResource( 2 )
+material = SubResource( 1 )
 position = Vector2( 1204.48, 808.846 )
 scale = Vector2( 37.5, 25 )
 texture = ExtResource( 1 )
