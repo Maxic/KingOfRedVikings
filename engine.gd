@@ -18,7 +18,7 @@ func _ready():
 	pass
 	
 func _process(delta):
-	var true_velocity = sqrt(pow(linear_velocity.x,2)+pow(linear_velocity.y,2)) *.35
+	var true_velocity = sqrt(pow(linear_velocity.x,2)+pow(linear_velocity.y,2)) *.15
 	bowsplash_pm.initial_velocity = true_velocity
 
 	# Wake particles
@@ -27,7 +27,7 @@ func _process(delta):
 		wake_instance.transform = self.transform
 		for child in wake_instance.get_children():
 			child.emitting = true
-			child.amount = child.amount * pow(true_velocity,2) * .01
+			child.amount = (child.amount * pow(true_velocity,2) * .01) + 1
 		get_node("../").add_child(wake_instance)
 		
 	
