@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://foam.shader" type="Shader" id=1]
+[ext_resource path="res://boat.png" type="Texture" id=2]
+[ext_resource path="res://assets/sea_foam_64px.png" type="Texture" id=3]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+render_mode blend_add;
+
+uniform vec2 tile_factor = vec2(10, 10);
+uniform float aspect_ratio = 0.5;
+
+void fragment() {
+	
+	vec2 tiled_uvs = UV * tile_factor; // Scale the UVs to get a tiled texture
+	tiled_uvs.y *= aspect_ratio; // Apply aspect ratio
+	
+	vec2 waves_uv_offset;
+	waves_uv_offset.x = cos(TIME + tiled_uvs.x + tiled_uvs.y) * 0.05;
+	waves_uv_offset.x = sin(TIME + tiled_uvs.y + tiled_uvs.x) * 0.1;
+	
+	COLOR = texture(TEXTURE, tiled_uvs + waves_uv_offset); // And lookup our color
+}
+"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/tile_factor = Vector2( 1, 1 )
+shader_param/aspect_ratio = 0.5
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 1 )
+shader_param/tile_factor = Vector2( 1, 1 )
+shader_param/aspect_ratio = 1.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+material = SubResource( 2 )
+texture = ExtResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+material = SubResource( 3 )
+position = Vector2( -84.731, 45.2313 )
+texture = ExtResource( 3 )
+offset = Vector2( 85.866, -49.3591 )
