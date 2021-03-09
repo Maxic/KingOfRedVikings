@@ -1,8 +1,14 @@
 extends RigidBody2D
 
+# Exported variables
 export var thrust = 1500
 export var torque = 1000
-var fast_threshold = 150
+export var fast_threshold = 150
+
+# Particles
+var particlemats = [preload("res://BowSplashLeft_ParticleMaterial.tres"),preload("res://BowSplashRight_ParticleMaterial.tres")]
+
+# Initializations
 var direction: Vector2 = Vector2(0,0)
 
 func _ready():
@@ -15,10 +21,12 @@ func _process(delta):
 		$BoatSprite.play("right")
 	elif Input.is_action_pressed("boost") and Input.is_action_pressed("ui_up"):
 		$BoatSprite.play("boost")	
+		$BowSplashLeft.emitting = true
+		$BowSplashRight.emitting = true
 	else:
 		$BoatSprite.play("normal")
-	#if not Input.is_action_pressed("boost") and not Input.is_action_pressed("ui_left") and not Input.is_action_pressed("ui_right") :
-	#	$BoatSprite.play("normal")
+		$BowSplashLeft.emitting = false		
+		$BowSplashRight.emitting = false
 
 func going_fast(velocity):
 	if velocity.x > fast_threshold or velocity.x < -fast_threshold:

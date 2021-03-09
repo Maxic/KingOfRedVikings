@@ -1,7 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://engine.gd" type="Script" id=1]
+[ext_resource path="res://BowSplashLeft_ParticleMaterial.tres" type="Material" id=2]
 [ext_resource path="res://assets/witboot.png" type="Texture" id=3]
+[ext_resource path="res://BowSplashRight_ParticleMaterial.tres" type="Material" id=4]
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 1.112
@@ -81,3 +83,25 @@ current = true
 [node name="BoatSprite" type="AnimatedSprite" parent="body"]
 frames = SubResource( 8 )
 animation = "normal"
+
+[node name="BowSplashLeft" type="Particles2D" parent="body"]
+position = Vector2( -3, -10 )
+rotation = 1.05069
+z_index = -1
+emitting = false
+amount = 7
+lifetime = 0.5
+speed_scale = 1.69
+randomness = 1.0
+process_material = ExtResource( 2 )
+
+[node name="BowSplashRight" type="Particles2D" parent="body"]
+position = Vector2( 2.376, -10.068 )
+rotation = -1.0472
+z_index = -1
+emitting = false
+amount = 7
+lifetime = 0.5
+speed_scale = 1.69
+randomness = 1.0
+process_material = ExtResource( 4 )
