@@ -23,7 +23,6 @@ _data = [ Vector2( 0.00632912, 1.58409 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 
 curve = SubResource( 3 )
 
 [resource]
-trail_divisor = 2
 emission_shape = 3
 emission_point_texture = SubResource( 2 )
 emission_point_count = 68

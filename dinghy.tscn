@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/groenboot.png" type="Texture" id=2]
 [ext_resource path="res://BowSplashParticleMat.tres" type="Material" id=5]
 
-[sub_resource type="PhysicsMaterial" id=6]
+[sub_resource type="PhysicsMaterial" id=12]
 friction = 3.0
 rough = true
 bounce = 60.0
@@ -62,7 +62,7 @@ z_index = 10
 
 [node name="body" type="RigidBody2D" parent="."]
 mass = 3.1
-physics_material_override = SubResource( 6 )
+physics_material_override = SubResource( 12 )
 gravity_scale = 0.0
 linear_damp = 1.5
 angular_damp = 3.86
@@ -83,8 +83,8 @@ shape = SubResource( 11 )
 current = true
 
 [node name="BowSplash" type="Particles2D" parent="body"]
-position = Vector2( -5.81, -11 )
-scale = Vector2( 1.049, 1 )
+position = Vector2( -6.294, -11.206 )
+scale = Vector2( 1.149, 0.993 )
 z_index = -1
 amount = 100
 lifetime = 0.2
