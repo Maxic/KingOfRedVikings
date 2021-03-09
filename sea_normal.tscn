@@ -6,26 +6,26 @@
 [ext_resource path="res://sea.shader" type="Shader" id=4]
 [ext_resource path="res://assets/wave.png" type="Texture" id=6]
 
-[sub_resource type="ShaderMaterial" id=3]
+[sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 3 )
 shader_param/tile_factor = Vector2( 750, 500 )
 shader_param/aspect_ratio = 0.5
 
-[sub_resource type="CanvasItemMaterial" id=9]
+[sub_resource type="CanvasItemMaterial" id=2]
 blend_mode = 1
 
-[sub_resource type="OpenSimplexNoise" id=10]
+[sub_resource type="OpenSimplexNoise" id=3]
 
-[sub_resource type="NoiseTexture" id=11]
+[sub_resource type="NoiseTexture" id=4]
 seamless = true
-noise = SubResource( 10 )
+noise = SubResource( 3 )
 
-[sub_resource type="ShaderMaterial" id=1]
+[sub_resource type="ShaderMaterial" id=5]
 shader = ExtResource( 4 )
 shader_param/tile_factor = Vector2( 187.5, 150 )
-shader_param/aspect_ratio = 0.666667
+shader_param/aspect_ratio = 0.8
 
-[sub_resource type="CanvasItemMaterial" id=5]
+[sub_resource type="CanvasItemMaterial" id=6]
 light_mode = 2
 
 [node name="sea" type="Node2D"]
@@ -33,17 +33,17 @@ light_mode = 2
 [node name="waves" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0.137255 )
 self_modulate = Color( 1, 1, 1, 0.839216 )
-material = SubResource( 3 )
+material = SubResource( 1 )
 scale = Vector2( 750, 500 )
 texture = ExtResource( 6 )
 centered = false
 
 [node name="noise_tiled" type="TextureRect" parent="."]
 modulate = Color( 1, 1, 1, 0.439216 )
-material = SubResource( 9 )
+material = SubResource( 2 )
 margin_right = 11975.0
 margin_bottom = 9580.0
-texture = SubResource( 11 )
+texture = SubResource( 4 )
 stretch_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -51,7 +51,7 @@ __meta__ = {
 
 [node name="sea" type="Sprite" parent="."]
 show_behind_parent = true
-material = SubResource( 1 )
+material = SubResource( 5 )
 scale = Vector2( 187.5, 150 )
 texture = ExtResource( 1 )
 centered = false
@@ -62,11 +62,11 @@ modulate = Color( 1, 1, 1, 0.415686 )
 show_behind_parent = true
 margin_right = 11993.0
 margin_bottom = 9606.0
-color = Color( 0, 0.552941, 1, 1 )
+color = Color( 0, 0.298039, 1, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 modulate = Color( 1, 1, 1, 0.858824 )
-material = SubResource( 5 )
+material = SubResource( 6 )
