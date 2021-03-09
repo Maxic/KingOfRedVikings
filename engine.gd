@@ -6,7 +6,7 @@ export var torque = 1000
 export var fast_threshold = 150
 
 # Particles
-var particlemats = [preload("res://BowSplashLeft_ParticleMaterial.tres"),preload("res://BowSplashRight_ParticleMaterial.tres")]
+var bowsplash_pm = preload("res://BowSplashParticleMat.tres")
 
 # Initializations
 var direction: Vector2 = Vector2(0,0)
@@ -15,23 +15,23 @@ func _ready():
 	pass
 	
 func _process(delta):
+	bowsplash_pm.initial_velocity = sqrt(pow(linear_velocity.x,2)+pow(linear_velocity.y,2)) *.1
+	
+	
 	if Input.is_action_pressed("ui_left") and going_fast(linear_velocity):
 		$BoatSprite.play("left")
 	elif Input.is_action_pressed("ui_right")and going_fast(linear_velocity):
 		$BoatSprite.play("right")
 	elif Input.is_action_pressed("boost") and Input.is_action_pressed("ui_up"):
 		$BoatSprite.play("boost")	
-		$BowSplashLeft.emitting = true
-		$BowSplashRight.emitting = true
 	else:
 		$BoatSprite.play("normal")
-		$BowSplashLeft.emitting = false		
-		$BowSplashRight.emitting = false
 
 func going_fast(velocity):
-	if velocity.x > fast_threshold or velocity.x < -fast_threshold:
+	
+	if abs(velocity.x) > fast_threshold:
 		return true
-	if velocity.y > fast_threshold or velocity.y < -fast_threshold:
+	if abs(velocity.y) > fast_threshold:
 		return true
 	return false
 
