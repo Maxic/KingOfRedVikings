@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/object_sheet.png-be44c053000554e60995706a77a1e7b0.stex"
+path="res://.import/wave.png-9bbe48c14b267899efb3f5270fc4cd6e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/object_sheet.png"
-dest_files=[ "res://.import/object_sheet.png-be44c053000554e60995706a77a1e7b0.stex" ]
+source_file="res://assets/wave.png"
+dest_files=[ "res://.import/wave.png-9bbe48c14b267899efb3f5270fc4cd6e.stex" ]
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=0
+flags/repeat=1
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false

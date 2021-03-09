@@ -2,11 +2,11 @@
 
 [ext_resource path="res://assets/sea_64px.png" type="Texture" id=1]
 [ext_resource path="res://sea.gd" type="Script" id=2]
-[ext_resource path="res://sea_normal.shader" type="Shader" id=3]
+[ext_resource path="res://deepwater_normal.shader" type="Shader" id=3]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 3 )
-shader_param/tile_factor = Vector2( 37.5, 25 )
+shader_param/tile_factor = Vector2( 75, 50 )
 shader_param/aspect_ratio = 0.666667
 
 [node name="sea" type="Node2D"]
