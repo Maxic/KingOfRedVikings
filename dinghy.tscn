@@ -1,23 +1,24 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://engine.gd" type="Script" id=1]
 [ext_resource path="res://assets/groenboot.png" type="Texture" id=2]
+[ext_resource path="res://Camera.gd" type="Script" id=3]
 [ext_resource path="res://BowSplashParticleMat.tres" type="Material" id=5]
 
-[sub_resource type="PhysicsMaterial" id=12]
+[sub_resource type="PhysicsMaterial" id=1]
 friction = 3.0
 rough = true
 bounce = 60.0
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 16, 24 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 2 )
 region = Rect2( 32, 0, 16, 24 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 2 )
 region = Rect2( 16, 0, 16, 24 )
 
@@ -25,19 +26,19 @@ region = Rect2( 16, 0, 16, 24 )
 atlas = ExtResource( 2 )
 region = Rect2( 48, 0, 16, 24 )
 
-[sub_resource type="SpriteFrames" id=10]
+[sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ SubResource( 7 ) ],
+"frames": [ SubResource( 2 ) ],
 "loop": true,
 "name": "left",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 8 ) ],
+"frames": [ SubResource( 3 ) ],
 "loop": true,
 "name": "right",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 9 ) ],
+"frames": [ SubResource( 4 ) ],
 "loop": true,
 "name": "normal",
 "speed": 5.0
@@ -53,7 +54,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=11]
+[sub_resource type="CapsuleShape2D" id=7]
 radius = 6.47775
 height = 7.39357
 
@@ -62,25 +63,26 @@ z_index = 10
 
 [node name="body" type="RigidBody2D" parent="."]
 mass = 3.1
-physics_material_override = SubResource( 12 )
+physics_material_override = SubResource( 1 )
 gravity_scale = 0.0
 linear_damp = 1.5
 angular_damp = 3.86
 script = ExtResource( 1 )
-thrust = 850
-torque = 3000
+thrust = 600
+torque = 2500
 fast_threshold = 120
 
 [node name="BoatSprite" type="AnimatedSprite" parent="body"]
-frames = SubResource( 10 )
+frames = SubResource( 6 )
 animation = "sunk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="body"]
 position = Vector2( 0.5, -0.5 )
-shape = SubResource( 11 )
+shape = SubResource( 7 )
 
 [node name="Camera2D" type="Camera2D" parent="body"]
 current = true
+script = ExtResource( 3 )
 
 [node name="BowSplash" type="Particles2D" parent="body"]
 position = Vector2( -6.294, -11.206 )

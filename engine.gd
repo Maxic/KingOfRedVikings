@@ -65,7 +65,7 @@ func _integrate_forces(state):
 	
 	# boost stuff
 	if Input.is_action_pressed("boost"):
-		thrust_vec = thrust_vec * 3
+		thrust_vec = thrust_vec * 2
 		torque_speed = torque_speed * 1.2
 
 	# Actually apply the force
