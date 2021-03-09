@@ -10,7 +10,7 @@
 position = Vector2( 120, 80 )
 
 [node name="course" type="TileMap" parent="."]
-modulate = Color( 1, 1, 1, 0.337255 )
+modulate = Color( 1, 1, 1, 0.580392 )
 self_modulate = Color( 1, 1, 1, 0.576471 )
 light_mask = -2147483647
 position = Vector2( 120, 80 )

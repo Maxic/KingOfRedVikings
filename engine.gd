@@ -15,7 +15,7 @@ func _ready():
 	pass
 	
 func _process(delta):
-	bowsplash_pm.initial_velocity = sqrt(pow(linear_velocity.x,2)+pow(linear_velocity.y,2)) *.1
+	bowsplash_pm.initial_velocity = sqrt(pow(linear_velocity.x,2)+pow(linear_velocity.y,2)) *.25
 	
 	
 	if Input.is_action_pressed("ui_left") and going_fast(linear_velocity):
@@ -42,7 +42,7 @@ func _integrate_forces(state):
 
 	if Input.is_action_pressed("boost"):
 		thrust_vec = thrust_vec * 3
-		torque_speed = torque_speed * 2
+		torque_speed = torque_speed * 1.2
 
 	applied_force = thrust_vec.rotated(rotation)
 
