@@ -5,18 +5,18 @@
 [ext_resource path="res://TitleScreen.gd" type="Script" id=3]
 [ext_resource path="res://assets/menu_press_z.png" type="Texture" id=4]
 
-[sub_resource type="Gradient" id=2]
+[sub_resource type="Gradient" id=1]
 colors = PoolColorArray( 0, 0, 0, 0, 1, 1, 1, 0 )
 
-[sub_resource type="GradientTexture" id=3]
-gradient = SubResource( 2 )
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
 
-[sub_resource type="AnimatedTexture" id=1]
+[sub_resource type="AnimatedTexture" id=3]
 flags = 4
 frames = 2
 fps = 1.5
 frame_0/texture = ExtResource( 4 )
-frame_1/texture = SubResource( 3 )
+frame_1/texture = SubResource( 2 )
 frame_1/delay_sec = 0.0
 
 [node name="TitleScreen" type="Node"]
@@ -41,7 +41,7 @@ __meta__ = {
 margin_left = 66.0
 margin_top = 20.0
 margin_right = 174.0
-margin_bottom = 107.0
+margin_bottom = 132.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
 custom_constants/separation = 60
@@ -54,5 +54,5 @@ texture = ExtResource( 2 )
 [node name="PressZ" type="TextureRect" parent="MarginContainer/VBoxContainer"]
 margin_top = 86.0
 margin_right = 108.0
-margin_bottom = 87.0
-texture = SubResource( 1 )
+margin_bottom = 112.0
+texture = SubResource( 3 )

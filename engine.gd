@@ -7,16 +7,29 @@ export var fast_threshold = 150
 
 # Particles
 var bowsplash_pm = preload("res://BowSplashParticleMat.tres")
+var wake = preload("res://Wake.tscn")
+
 
 # Initializations
 var direction: Vector2 = Vector2(0,0)
+var wake_instance
 
 func _ready():
 	pass
 	
 func _process(delta):
-	bowsplash_pm.initial_velocity = sqrt(pow(linear_velocity.x,2)+pow(linear_velocity.y,2)) *.25
-	
+	var true_velocity = sqrt(pow(linear_velocity.x,2)+pow(linear_velocity.y,2)) *.35
+	bowsplash_pm.initial_velocity = true_velocity
+
+	# Wake particles
+	if abs(true_velocity) > 4:
+		wake_instance = wake.instance()
+		wake_instance.transform = self.transform
+		for child in wake_instance.get_children():
+			child.emitting = true
+			child.amount = child.amount * pow(true_velocity,2) * .01
+		get_node("../").add_child(wake_instance)
+		
 	
 	if Input.is_action_pressed("ui_left") and going_fast(linear_velocity):
 		$BoatSprite.play("left")
@@ -36,16 +49,29 @@ func going_fast(velocity):
 	return false
 
 func _integrate_forces(state):
-	direction.y = Input.is_action_pressed("ui_up")
-	var thrust_vec = Vector2(0, thrust*-1) * direction.y
 	var torque_speed = torque
-
+	var thrust_vec = Vector2(0, thrust*-1)
+	
+	# Set some params based on forward or backwards movement
+	if Input.is_action_pressed("ui_up"):
+		direction.y = 1
+	elif Input.is_action_pressed("ui_down"):
+		direction.y = -.1
+		torque_speed = torque_speed *.3
+	else:
+		direction.y = 0
+		
+	thrust_vec = thrust_vec * direction.y
+	
+	# boost stuff
 	if Input.is_action_pressed("boost"):
 		thrust_vec = thrust_vec * 3
 		torque_speed = torque_speed * 1.2
 
+	# Actually apply the force
 	applied_force = thrust_vec.rotated(rotation)
 
+	# Rotation stuff
 	var rotation_dir = 0
 	if Input.is_action_pressed("ui_right"):
 		rotation_dir += 1

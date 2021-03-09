@@ -10,6 +10,7 @@ shader_param/tile_factor = Vector2( 75, 50 )
 shader_param/aspect_ratio = 0.666667
 
 [node name="sea" type="Node2D"]
+scale = Vector2( 2, 2 )
 
 [node name="sea" type="Sprite" parent="."]
 material = SubResource( 1 )
