@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://timerdisplay.gd" type="Script" id=1]
+[ext_resource path="res://timer.tscn" type="PackedScene" id=2]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://assets/ds_digital/DS-DIGII.TTF"
@@ -25,7 +26,5 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ms" type="Timer" parent="TimerDisplay"]
-wait_time = 0.1
-autostart = true
+[node name="ms" parent="TimerDisplay" instance=ExtResource( 2 )]
 [connection signal="timeout" from="TimerDisplay/ms" to="TimerDisplay" method="_on_ms_timeout"]

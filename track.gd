@@ -4,6 +4,7 @@ extends TileMap
 # Declare member variables here. Examples:
 var checkpoints_passed
 var finished 
+var timer_parent = preload("res://UI.tscn")
 
 
 # Called when the node enters the scene tree for the first time.
@@ -63,8 +64,7 @@ func _on_checkpoint9_body_entered(body):
 			checkpoints_passed = 9
 
 func _on_finish_body_entered(body):
-	print(checkpoints_passed)
 	if body.name == "body":
 		if checkpoints_passed == 9:
 			finished = true
-			print("You win!")
+			get_node("../../UI/TimerDisplay/ms").stop()
