@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://timerdisplay.gd" type="Script" id=1]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://assets/ds_digital/DS-DIGI.TTF"
+
+[sub_resource type="DynamicFont" id=2]
+outline_size = 2
+outline_color = Color( 1, 0.960784, 0, 1 )
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://assets/ds_digital/DS-DIGIB.TTF"
+
+[sub_resource type="DynamicFont" id=4]
+outline_size = 1
+outline_color = Color( 0.298039, 0.298039, 0.298039, 0.780392 )
+font_data = SubResource( 3 )
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="TimerDisplay" type="RichTextLabel" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -52.0
+margin_top = -21.0
+custom_fonts/mono_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 0.976471, 1, 0, 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ms" type="Timer" parent="TimerDisplay"]
+wait_time = 0.1
+autostart = true
+[connection signal="timeout" from="TimerDisplay/ms" to="TimerDisplay" method="_on_ms_timeout"]
