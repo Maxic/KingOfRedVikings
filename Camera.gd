@@ -21,7 +21,7 @@ func _process(delta):
 
 	# Zoom out when going fast
 	self.zoom = lerp(self.zoom, (self.zoom*(true_velocity/50)+Vector2(.6,.6)), delta*10)
-	print(true_velocity)
+
 	if self.zoom > old_zoom and self.zoom.y > max_zoom:
 		self.zoom = old_zoom
 	if self.zoom.y < 1:
