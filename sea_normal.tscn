@@ -6,89 +6,89 @@
 [ext_resource path="res://sea.shader" type="Shader" id=4]
 [ext_resource path="res://assets/sea_foam_64px.png" type="Texture" id=5]
 
-[sub_resource type="CanvasItemMaterial" id=11]
+[sub_resource type="CanvasItemMaterial" id=1]
 blend_mode = 1
 
-[sub_resource type="ShaderMaterial" id=1]
+[sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 3 )
 shader_param/tile_factor = Vector2( 187.5, 150 )
 shader_param/aspect_ratio = 0.667
 
-[sub_resource type="OpenSimplexNoise" id=9]
+[sub_resource type="OpenSimplexNoise" id=3]
 octaves = 9
 
-[sub_resource type="NoiseTexture" id=10]
+[sub_resource type="NoiseTexture" id=4]
 width = 256
 height = 256
 seamless = true
-noise = SubResource( 9 )
+noise = SubResource( 3 )
 
-[sub_resource type="ShaderMaterial" id=4]
+[sub_resource type="ShaderMaterial" id=5]
 shader = ExtResource( 4 )
 shader_param/tile_factor = Vector2( 187.5, 150 )
 shader_param/aspect_ratio = 0.8
 
-[sub_resource type="CanvasItemMaterial" id=2]
+[sub_resource type="CanvasItemMaterial" id=6]
 blend_mode = 2
 light_mode = 2
 
-[sub_resource type="OpenSimplexNoise" id=8]
+[sub_resource type="OpenSimplexNoise" id=7]
 period = 200.4
 persistence = 0.642
 lacunarity = 1.62
 
-[sub_resource type="NoiseTexture" id=3]
+[sub_resource type="NoiseTexture" id=8]
 width = 1024
 height = 1024
 seamless = true
-noise = SubResource( 8 )
+noise = SubResource( 7 )
 
 [node name="sea" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-material = SubResource( 11 )
+material = SubResource( 1 )
 margin_right = 11936.0
 margin_bottom = 9477.0
-color = Color( 0.117647, 0.32549, 0.87451, 1 )
+color = Color( 0.27451, 0.47451, 1, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="waves" type="Sprite" parent="."]
-modulate = Color( 1, 1, 1, 0.462745 )
+modulate = Color( 1, 1, 1, 0.0941176 )
 self_modulate = Color( 1, 1, 1, 0.670588 )
-material = SubResource( 1 )
+material = SubResource( 2 )
 position = Vector2( 0, 32 )
 scale = Vector2( 46.7423, 59.8535 )
-texture = SubResource( 10 )
+texture = SubResource( 4 )
 centered = false
 flip_h = true
 
 [node name="waves2" type="Sprite" parent="."]
-modulate = Color( 1, 1, 1, 0.596078 )
-self_modulate = Color( 1, 1, 1, 0.0823529 )
-material = SubResource( 1 )
+modulate = Color( 1, 1, 1, 0.313726 )
+self_modulate = Color( 1, 1, 1, 0.0980392 )
+material = SubResource( 2 )
 scale = Vector2( 74.8048, 59.9785 )
 texture = ExtResource( 5 )
 centered = false
 
 [node name="sea" type="Sprite" parent="."]
-modulate = Color( 1, 1, 1, 0.329412 )
+modulate = Color( 1, 1, 1, 0.486275 )
 self_modulate = Color( 1, 1, 1, 0.623529 )
 show_behind_parent = true
-material = SubResource( 4 )
+material = SubResource( 5 )
 scale = Vector2( 187.5, 150 )
 texture = ExtResource( 1 )
 centered = false
 script = ExtResource( 2 )
 
 [node name="noise_tiled" type="TextureRect" parent="."]
-modulate = Color( 1, 1, 1, 0.662745 )
-material = SubResource( 2 )
+modulate = Color( 1, 1, 1, 0.466667 )
+material = SubResource( 6 )
 margin_left = -0.420654
 margin_right = 11974.6
 margin_bottom = 9580.0
-texture = SubResource( 3 )
+texture = SubResource( 8 )
 stretch_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false
