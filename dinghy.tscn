@@ -6,9 +6,8 @@
 [ext_resource path="res://BowSplashParticleMat.tres" type="Material" id=5]
 
 [sub_resource type="PhysicsMaterial" id=1]
-friction = 3.0
-rough = true
-bounce = 60.0
+friction = 0.1
+bounce = 20.0
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 2 )
@@ -92,3 +91,4 @@ z_index = -1
 amount = 100
 lifetime = 0.2
 process_material = ExtResource( 5 )
+[connection signal="body_entered" from="body" to="body" method="_on_body_body_entered"]
