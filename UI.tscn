@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://timerdisplay.gd" type="Script" id=1]
 [ext_resource path="res://timer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://text.shader" type="Shader" id=3]
 [ext_resource path="res://assets/checkpoint_text.png" type="Texture" id=4]
 [ext_resource path="res://checkpoint_label.gd" type="Script" id=5]
+[ext_resource path="res://shallow_label.gd" type="Script" id=6]
+[ext_resource path="res://assets/shallow.png" type="Texture" id=8]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 3 )
@@ -29,6 +31,13 @@ position = Vector2( 119.243, 122.998 )
 scale = Vector2( 0.31352, 0.505734 )
 texture = ExtResource( 4 )
 script = ExtResource( 5 )
+
+[node name="shallow_label" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.498039 )
+position = Vector2( 120, 150 )
+scale = Vector2( 0.606539, 0.606539 )
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
 
 [node name="TimerDisplay" type="RichTextLabel" parent="."]
 anchor_left = 1.0

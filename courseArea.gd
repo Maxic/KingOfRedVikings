@@ -13,7 +13,9 @@ func _on_shallows_body_entered(body):
 	if body.name == 'body':
 		old_damp = body.linear_damp
 		body.linear_damp = 5
+		get_node("../../../UI/shallow_label").visible = true
 
 func _on_shallows_body_exited(body):
 	if body.name == 'body':
 		body.linear_damp = old_damp
+		get_node("../../../UI/shallow_label").visible = false
