@@ -5,6 +5,9 @@ extends RichTextLabel
 var ms = 0
 var s = 0
 var m = 0
+var finished = false
+var blinking = false
+var time = 0.0
 
 
 # Called when the node enters the scene tree for the first time.
@@ -14,6 +17,15 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if finished:
+		self.rect_scale = Vector2(1.2,1.2)
+		self.rect_position = Vector2(80, 60)
+		finished = false
+		blinking = true
+	if blinking:
+		time += delta * 6.0
+		self.modulate.a = sin(time)
+	
 	if ms > 9:
 		s += 1
 		ms = 0

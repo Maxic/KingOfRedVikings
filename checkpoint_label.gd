@@ -13,7 +13,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(self.triggered)
 	if triggered == true:
 		self.visible = true
 		self.modulate.a = self.modulate.a - 0.01
