@@ -9,11 +9,11 @@ var old_damp
 func _ready():
 	pass # Replace with function body.
 
-func _on_Area2D_body_entered(body):
+func _on_shallows_body_entered(body):
 	if body.name == 'body':
 		old_damp = body.linear_damp
 		body.linear_damp = 5
 
-func _on_Area2D_body_exited(body):
+func _on_shallows_body_exited(body):
 	if body.name == 'body':
 		body.linear_damp = old_damp

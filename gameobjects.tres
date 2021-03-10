@@ -1,7 +1,31 @@
-[gd_resource type="TileSet" load_steps=3 format=2]
+[gd_resource type="TileSet" load_steps=11 format=2]
 
 [ext_resource path="res://assets/checkpoints.png" type="Texture" id=1]
 [ext_resource path="res://assets/finish.png" type="Texture" id=2]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 8.99305, 4.609, 12.094, 6.15946, 13.6444, 9.64797, 12.094, 14.1055, 7.24879, 13.9117, 3.56647, 12.3613, 3.76028, 8.48513, 5.31073, 5.19042 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 10.7373, 4.99895, 12.8692, 6.54939, 13.4506, 11.5884, 11.3187, 13.5264, 6.27976, 13.7202, 4.14789, 11.3946, 4.14789, 6.35559, 7.83022, 4.22371 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 11.9002, 7.02296, 12.094, 12.0619, 9.96209, 13.8062, 4.72931, 13.8062, 3.17886, 12.0619, 2.98505, 6.44154, 5.69834, 5.08488, 9.57447, 4.89108 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 10.3278, 4.69728, 12.8473, 6.82915, 12.8473, 11.4805, 10.7154, 13.4186, 6.45167, 13.4186, 3.73837, 11.2867, 3.73837, 7.99199, 6.45167, 4.30966 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+points = PoolVector2Array( 9.74638, 6.24773, 12.4597, 8.57341, 13.2349, 12.0619, 11.103, 14.969, 6.06405, 15.3566, 3.73837, 13.2248, 4.31979, 9.15483, 7.03309, 6.82915 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 11.9002, 9.34863, 12.2878, 12.8372, 9.96209, 15.5504, 5.69834, 15.5504, 3.37266, 13.8062, 2.79124, 9.93005, 4.3417, 6.82915, 7.83022, 6.63535 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+points = PoolVector2Array( 11.7063, 9.26268, 11.9002, 13.7202, 9.57447, 15.4645, 5.69834, 15.2707, 3.17886, 13.3326, 3.56647, 8.29366, 5.31073, 6.54939, 9.76828, 7.13081 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+points = PoolVector2Array( 12.2878, 8.89697, 11.9002, 13.5483, 10.7373, 14.7112, 6.27976, 15.6802, 2.98505, 13.3545, 3.17886, 9.6722, 4.72931, 6.76511, 9.38067, 6.76511 )
 
 [resource]
 0/name = "checkpoints.png 0"
@@ -23,9 +47,34 @@
 0/navigation_offset = Vector2( 0, 0 )
 0/shape_offset = Vector2( 0, 0 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 1 )
 0/shape_one_way = false
-0/shape_one_way_margin = 0.0
-0/shapes = [  ]
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 3 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 3 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 0/z_index = 0
 1/name = "finish.png 1"
 1/texture = ExtResource( 2 )
@@ -46,9 +95,34 @@
 1/navigation_offset = Vector2( 0, 0 )
 1/shape_offset = Vector2( 0, 0 )
 1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 5 )
 1/shape_one_way = false
-1/shape_one_way_margin = 0.0
-1/shapes = [  ]
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 2, 3 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 3 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 7 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 8 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 1/z_index = 0
 2/name = "finish.png 2"
 2/texture = ExtResource( 2 )
