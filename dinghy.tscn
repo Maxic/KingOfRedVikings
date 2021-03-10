@@ -68,9 +68,6 @@ gravity_scale = 0.0
 linear_damp = 1.5
 angular_damp = 3.86
 script = ExtResource( 1 )
-thrust = 600
-torque = 2500
-fast_threshold = 120
 
 [node name="BoatSprite" type="AnimatedSprite" parent="body"]
 frames = SubResource( 6 )

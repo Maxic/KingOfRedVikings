@@ -1,9 +1,9 @@
 extends RigidBody2D
 
 # Exported variables
-export var thrust = 1500
-export var torque = 1000
-export var fast_threshold = 150
+export var thrust = 1000
+export var torque = 2500
+export var fast_threshold = 120
 
 # Particles
 var bowsplash_pm = preload("res://BowSplashParticleMat.tres")
