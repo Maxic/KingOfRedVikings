@@ -20,10 +20,10 @@ extents = Vector2( 38.9192, 79.4961 )
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 107.449, 24.6674 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 130.955, 25.2104 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 38.806, 218.962 )
 
 [sub_resource type="RectangleShape2D" id=6]
@@ -115,14 +115,14 @@ shape = SubResource( 3 )
 [node name="checkpoint3" type="CollisionShape2D" parent="game_objects/checkpoint3"]
 show_behind_parent = true
 position = Vector2( 1818.46, 376.105 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="checkpoint4" type="Area2D" parent="game_objects"]
 
 [node name="checkpoint4" type="CollisionShape2D" parent="game_objects/checkpoint4"]
 show_behind_parent = true
 position = Vector2( 1986.19, 1364.15 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="checkpoint5" type="Area2D" parent="game_objects"]
 
