@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://timerdisplay.gd" type="Script" id=1]
 [ext_resource path="res://timer.tscn" type="PackedScene" id=2]
@@ -11,6 +11,9 @@
 [ext_resource path="res://start_sequence.gd" type="Script" id=9]
 [ext_resource path="res://assets/speed_outline.png" type="Texture" id=10]
 [ext_resource path="res://assets/speed_bar.png" type="Texture" id=11]
+[ext_resource path="res://minimap.tscn" type="PackedScene" id=12]
+[ext_resource path="res://minimap_player.gd" type="Script" id=13]
+[ext_resource path="res://assets/minimap_player.png" type="Texture" id=14]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 3 )
@@ -122,6 +125,16 @@ texture_progress = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="minimap_player" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 3.76338, 16.9265 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 14 )
+script = ExtResource( 13 )
+
+[node name="minimap" parent="." instance=ExtResource( 12 )]
+scale = Vector2( 0.01, 0.01 )
 [connection signal="timeout" from="TimerDisplay/ms" to="TimerDisplay" method="_on_ms_timeout"]
-[connection signal="animation_finished" from="Control/start_sequence" to="Control/start_sequence" method="_on_start_sequence_animation_finished"]
 [connection signal="animation_finished" from="Control/start_sequence" to="TimerDisplay" method="_on_start_sequence_animation_finished"]
+[connection signal="animation_finished" from="Control/start_sequence" to="Control/start_sequence" method="_on_start_sequence_animation_finished"]
