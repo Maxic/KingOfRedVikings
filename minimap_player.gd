@@ -16,8 +16,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var player_postion = get_node("../../dinghy/body").position
+	var player = get_node("../../dinghy/body")
+	var player_position = player.position
+	var player_rotation = player.rotation
 	#print(player_postion.y)
-	self.position.x = (player_postion.x * 0.01) + offset_position.x
-	self.position.y = (player_postion.y * 0.01) + offset_position.y
+	self.rotation = player_rotation
+	self.position.x = (player_position.x * 0.01) + offset_position.x
+	self.position.y = (player_position.y * 0.01) + offset_position.y
 	
