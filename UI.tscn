@@ -11,7 +11,7 @@
 [ext_resource path="res://start_sequence.gd" type="Script" id=9]
 [ext_resource path="res://assets/speed_outline.png" type="Texture" id=10]
 [ext_resource path="res://assets/speed_bar.png" type="Texture" id=11]
-[ext_resource path="res://minimap.tscn" type="PackedScene" id=12]
+[ext_resource path="res://minimap_cherrybay.tscn" type="PackedScene" id=12]
 [ext_resource path="res://minimap_player.gd" type="Script" id=13]
 [ext_resource path="res://assets/minimap_player.png" type="Texture" id=14]
 [ext_resource path="res://assets/Coder's Crux.ttf" type="DynamicFontData" id=15]
@@ -60,13 +60,13 @@ region = Rect2( 1056, 0, 176, 64 )
 atlas = ExtResource( 16 )
 region = Rect2( 1232, 0, 176, 64 )
 
-[sub_resource type="AtlasTexture" id=11]
+[sub_resource type="AtlasTexture" id=22]
 atlas = ExtResource( 16 )
-region = Rect2( 1408, 0, 176, 64 )
+region = Rect2( 1584, 0, 176, 64 )
 
 [sub_resource type="SpriteFrames" id=12]
 animations = [ {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 22 ) ],
 "loop": false,
 "name": "results",
 "speed": 10.0
@@ -148,7 +148,7 @@ script = ExtResource( 19 )
 [node name="TimerDisplay" type="RichTextLabel" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -72.0
+margin_left = -64.0
 margin_top = 4.0
 margin_right = 6.0
 margin_bottom = 24.0
@@ -195,16 +195,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="minimap_cherrybay" parent="." instance=ExtResource( 12 )]
+scale = Vector2( 0.01, 0.01 )
+
 [node name="minimap_player" type="Sprite" parent="."]
 show_behind_parent = true
 position = Vector2( 3.76338, 16.9265 )
-scale = Vector2( 0.2, 0.2 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 14 )
 script = ExtResource( 13 )
-
-[node name="minimap" parent="." instance=ExtResource( 12 )]
-scale = Vector2( 0.01, 0.01 )
 [connection signal="animation_finished" from="results_anim" to="TimerDisplay" method="_on_results_anim_animation_finished"]
 [connection signal="timeout" from="TimerDisplay/ms" to="TimerDisplay" method="_on_ms_timeout"]
-[connection signal="animation_finished" from="Control/start_sequence" to="TimerDisplay" method="_on_start_sequence_animation_finished"]
 [connection signal="animation_finished" from="Control/start_sequence" to="Control/start_sequence" method="_on_start_sequence_animation_finished"]
+[connection signal="animation_finished" from="Control/start_sequence" to="TimerDisplay" method="_on_start_sequence_animation_finished"]
