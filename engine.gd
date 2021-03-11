@@ -2,7 +2,7 @@ extends RigidBody2D
 
 # Exported variables
 export var thrust = 1000
-export var torque = 2500
+export var torque = 1500
 export var fast_threshold = 120
 
 # Particles

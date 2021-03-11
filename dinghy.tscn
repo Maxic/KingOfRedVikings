@@ -8,7 +8,6 @@
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.1
-bounce = 20.0
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 2 )
