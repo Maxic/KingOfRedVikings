@@ -91,11 +91,6 @@ __meta__ = {
 }
 
 [node name="ms" parent="TimerDisplay" instance=ExtResource( 2 )]
-
-[node name="start_sequence" type="AnimatedSprite" parent="."]
-position = Vector2( 118.921, 30.9193 )
 frames = SubResource( 11 )
-animation = "start"
-script = ExtResource( 9 )
 [connection signal="timeout" from="TimerDisplay/ms" to="TimerDisplay" method="_on_ms_timeout"]
 [connection signal="animation_finished" from="start_sequence" to="start_sequence" method="_on_start_sequence_animation_finished"]
