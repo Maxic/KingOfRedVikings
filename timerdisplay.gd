@@ -19,9 +19,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if finished:
+		self.rect_position = Vector2(10, 82)
 		self.get_node("./ms").stop()
-		self.rect_scale = Vector2(1.2,1.2)
-		self.rect_position = Vector2(80, 60)
+		self.rect_position = Vector2(20, 60)
 		finished = false
 		blinking = true
 	if blinking:

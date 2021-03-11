@@ -8,7 +8,7 @@
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.1
-absorbent = true
+bounce = 20.0
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 2 )
@@ -72,7 +72,6 @@ gravity_scale = 0.0
 linear_damp = 1.5
 angular_damp = 3.86
 script = ExtResource( 1 )
-torque = 1500
 
 [node name="BoatSprite" type="AnimatedSprite" parent="body"]
 frames = SubResource( 7 )

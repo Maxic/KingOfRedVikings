@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://timerdisplay.gd" type="Script" id=1]
 [ext_resource path="res://timer.tscn" type="PackedScene" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://minimap_player.gd" type="Script" id=13]
 [ext_resource path="res://assets/minimap_player.png" type="Texture" id=14]
 [ext_resource path="res://assets/Coder's Crux.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://assets/results.png" type="Texture" id=16]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 3 )
@@ -22,6 +23,54 @@ shader_param/tile_factor = Vector2( 1, 1 )
 shader_param/aspect_ratio = 1.0
 
 [sub_resource type="CanvasItemMaterial" id=12]
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 16 )
+region = Rect2( 0, 0, 176, 64 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 16 )
+region = Rect2( 176, 0, 176, 64 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 16 )
+region = Rect2( 352, 0, 176, 64 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 16 )
+region = Rect2( 528, 0, 176, 64 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 16 )
+region = Rect2( 704, 0, 176, 64 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 16 )
+region = Rect2( 880, 0, 176, 64 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 16 )
+region = Rect2( 1056, 0, 176, 64 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 16 )
+region = Rect2( 1232, 0, 176, 64 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 16 )
+region = Rect2( 1408, 0, 176, 64 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 16 )
+region = Rect2( 1584, 0, 176, 64 )
+
+[sub_resource type="SpriteFrames" id=24]
+animations = [ {
+"frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
+"loop": true,
+"name": "results",
+"speed": 10.0
+} ]
 
 [sub_resource type="DynamicFont" id=13]
 outline_size = 1
@@ -83,6 +132,13 @@ scale = Vector2( 0.606539, 0.606539 )
 texture = ExtResource( 8 )
 script = ExtResource( 6 )
 
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 88.2986, 82.3526 )
+frames = SubResource( 24 )
+animation = "results"
+frame = 5
+playing = true
+
 [node name="TimerDisplay" type="RichTextLabel" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
@@ -92,7 +148,7 @@ margin_right = 6.0
 margin_bottom = 24.0
 rect_clip_content = false
 custom_fonts/normal_font = SubResource( 13 )
-custom_colors/default_color = Color( 0.976471, 1, 0, 1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
 fit_content_height = true
 scroll_active = false
 script = ExtResource( 1 )
