@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://timerdisplay.gd" type="Script" id=1]
 [ext_resource path="res://timer.tscn" type="PackedScene" id=2]
@@ -14,20 +14,19 @@
 [ext_resource path="res://minimap.tscn" type="PackedScene" id=12]
 [ext_resource path="res://minimap_player.gd" type="Script" id=13]
 [ext_resource path="res://assets/minimap_player.png" type="Texture" id=14]
+[ext_resource path="res://assets/Coder's Crux.ttf" type="DynamicFontData" id=15]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 3 )
 shader_param/tile_factor = Vector2( 1, 1 )
 shader_param/aspect_ratio = 1.0
 
-[sub_resource type="DynamicFontData" id=2]
-font_path = "res://assets/ds_digital/DS-DIGII.TTF"
+[sub_resource type="CanvasItemMaterial" id=12]
 
-[sub_resource type="DynamicFont" id=3]
-size = 22
+[sub_resource type="DynamicFont" id=13]
 outline_size = 1
-outline_color = Color( 0.176471, 0.176471, 0.176471, 1 )
-font_data = SubResource( 2 )
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 15 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 7 )
@@ -78,6 +77,7 @@ script = ExtResource( 5 )
 [node name="shallow_label" type="Sprite" parent="."]
 visible = false
 modulate = Color( 1, 1, 1, 0.498039 )
+material = SubResource( 12 )
 position = Vector2( 120, 150 )
 scale = Vector2( 0.606539, 0.606539 )
 texture = ExtResource( 8 )
@@ -87,9 +87,14 @@ script = ExtResource( 6 )
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -72.0
+margin_top = 4.0
+margin_right = 6.0
 margin_bottom = 24.0
-custom_fonts/normal_font = SubResource( 3 )
+rect_clip_content = false
+custom_fonts/normal_font = SubResource( 13 )
 custom_colors/default_color = Color( 0.976471, 1, 0, 1 )
+fit_content_height = true
+scroll_active = false
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -136,5 +141,5 @@ script = ExtResource( 13 )
 [node name="minimap" parent="." instance=ExtResource( 12 )]
 scale = Vector2( 0.01, 0.01 )
 [connection signal="timeout" from="TimerDisplay/ms" to="TimerDisplay" method="_on_ms_timeout"]
-[connection signal="animation_finished" from="Control/start_sequence" to="TimerDisplay" method="_on_start_sequence_animation_finished"]
 [connection signal="animation_finished" from="Control/start_sequence" to="Control/start_sequence" method="_on_start_sequence_animation_finished"]
+[connection signal="animation_finished" from="Control/start_sequence" to="TimerDisplay" method="_on_start_sequence_animation_finished"]
