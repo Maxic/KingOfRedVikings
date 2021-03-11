@@ -6,7 +6,6 @@ var ms = 0
 var s = 0
 var m = 0
 var finished = false
-var blinking = false
 var time = 0.0
 var run = false
 
@@ -19,13 +18,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if finished:
-		self.rect_position = Vector2(10, 82)
 		self.get_node("./ms").stop()
-		finished = false
-		blinking = true
-	if blinking:
-		time += delta * 6.0
-		self.modulate.a = sin(time)
 	
 	if ms > 9:
 		s += 1
@@ -49,3 +42,7 @@ func _on_ms_timeout():
 
 func _on_start_sequence_animation_finished():
 	run = true
+
+
+func _on_results_anim_animation_finished():
+	self.rect_position = Vector2(10, 82)
