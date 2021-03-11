@@ -27,7 +27,6 @@ func _process(delta):
 
 	get_node("../../UI/SpeedDisplay").value = normalized_velocity * 100
 	get_node("EngineSound").pitch_scale = (1 * normalized_velocity) +2
-	print(get_node("EngineSound").pitch_scale)
 
 	# Wake particles
 	if abs(true_velocity) > 4:
