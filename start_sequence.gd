@@ -16,5 +16,5 @@ func _ready():
 
 
 func _on_start_sequence_animation_finished():
-	get_node("../../dinghy/body").disable_control = false
+	get_node("../../../dinghy/body").disable_control = false
 	self.visible = false

@@ -8,6 +8,7 @@ var m = 0
 var finished = false
 var blinking = false
 var time = 0.0
+var run = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -18,6 +19,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if finished:
+		self.get_node("./ms").stop()
 		self.rect_scale = Vector2(1.2,1.2)
 		self.rect_position = Vector2(80, 60)
 		finished = false
@@ -41,5 +43,10 @@ func _process(delta):
 
 
 func _on_ms_timeout():
-	ms += 1
+	if run:
+		ms += 1
 
+
+
+func _on_start_sequence_animation_finished():
+	run = true

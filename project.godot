@@ -20,8 +20,10 @@ run/main_scene="res://TitleScreen.tscn"
 
 [display]
 
-window/size/width=480
-window/size/height=320
+window/size/width=240
+window/size/height=160
+window/size/test_width=720
+window/size/test_height=480
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 

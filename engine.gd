@@ -22,6 +22,8 @@ func _process(delta):
 	var true_velocity = sqrt(pow(linear_velocity.x,2)+pow(linear_velocity.y,2)) *.15
 	bowsplash_pm.initial_velocity = true_velocity
 
+	#get_node("../../UI/SpeedDisplay").value = (true_velocity/64)
+
 	# Wake particles
 	if abs(true_velocity) > 4:
 		wake_instance = wake.instance()
