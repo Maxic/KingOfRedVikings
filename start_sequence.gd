@@ -1,4 +1,4 @@
-extends Node2D
+extends AnimatedSprite
 
 
 # Declare member variables here. Examples:
@@ -8,10 +8,13 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	self.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):		
-	if Input.is_action_pressed("restart"):
-		get_tree().reload_current_scene()
+#func _process(delta):
+
+
+func _on_start_sequence_animation_finished():
+	get_node("../../dinghy/body").disable_control = false
+	self.visible = false

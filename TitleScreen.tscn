@@ -51,8 +51,6 @@ size_flags_vertical = 0
 custom_constants/separation = 60
 
 [node name="PressZ" type="TextureRect" parent="MarginContainer/VBoxContainer"]
-anchor_left = 0.0555556
-anchor_right = 0.0555556
 margin_right = 108.0
 margin_bottom = 26.0
 texture = SubResource( 3 )

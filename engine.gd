@@ -13,7 +13,7 @@ var wake = preload("res://Wake.tscn")
 # Initializations
 var direction: Vector2 = Vector2(0,0)
 var wake_instance
-var finished = false
+var disable_control = true
 
 func _ready():
 	pass
@@ -62,7 +62,7 @@ func _integrate_forces(state):
 	else:
 		direction.y = 0
 		
-	if finished:
+	if disable_control:
 		direction.y = 0
 		
 	thrust_vec = thrust_vec * direction.y

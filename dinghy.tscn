@@ -11,11 +11,11 @@ bounce = 20.0
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 16, 21 )
+region = Rect2( 32, 0, 16, 21 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 2 )
-region = Rect2( 32, 0, 16, 21 )
+region = Rect2( 0, 0, 16, 21 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 2 )
@@ -23,22 +23,22 @@ region = Rect2( 16, 0, 16, 21 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 2 )
-region = Rect2( 48, 0, 16, 21 )
+region = Rect2( 64, 0, 16, 21 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 2 )
-region = Rect2( 64, 0, 16, 21 )
+region = Rect2( 48, 0, 16, 21 )
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
 "frames": [ SubResource( 2 ) ],
 "loop": true,
-"name": "left",
+"name": "right",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 3 ) ],
 "loop": true,
-"name": "right",
+"name": "left",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 4 ) ],
@@ -48,12 +48,12 @@ animations = [ {
 }, {
 "frames": [ SubResource( 5 ) ],
 "loop": true,
-"name": "boost",
+"name": "sunk",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 6 ) ],
 "loop": true,
-"name": "sunk",
+"name": "boost",
 "speed": 5.0
 } ]
 
