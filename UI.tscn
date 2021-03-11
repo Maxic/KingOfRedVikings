@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://timerdisplay.gd" type="Script" id=1]
 [ext_resource path="res://timer.tscn" type="PackedScene" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://results.gd" type="Script" id=17]
 [ext_resource path="res://assets/result_done.png" type="Texture" id=18]
 [ext_resource path="res://results_anim.gd" type="Script" id=19]
+[ext_resource path="res://assets/countdown.ogg" type="AudioStream" id=20]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 3 )
@@ -106,7 +107,7 @@ region = Rect2( 612, 0, 102, 64 )
 
 [sub_resource type="SpriteFrames" id=21]
 animations = [ {
-"frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 20 ) ],
+"frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 16 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 20 ), SubResource( 20 ) ],
 "loop": false,
 "name": "default",
 "speed": 4.0
@@ -177,6 +178,9 @@ frames = SubResource( 21 )
 centered = false
 offset = Vector2( -28, 0 )
 script = ExtResource( 9 )
+
+[node name="countdown" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource( 20 )
 
 [node name="SpeedDisplay" type="TextureProgress" parent="."]
 anchor_top = 1.0

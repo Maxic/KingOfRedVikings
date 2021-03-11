@@ -2,7 +2,7 @@ extends RigidBody2D
 
 # Exported variables
 export var thrust = 1000
-export var torque = 1500
+export var torque = 2000
 export var fast_threshold = 120
 
 # Particles
@@ -26,7 +26,7 @@ func _process(delta):
 	normalized_velocity = true_velocity/60
 
 	get_node("../../UI/SpeedDisplay").value = normalized_velocity * 100
-	get_node("EngineSound").pitch_scale = (1 * normalized_velocity) +2
+	get_node("EngineSound").pitch_scale = (5 * normalized_velocity) +3
 
 	# Wake particles
 	if abs(true_velocity) > 4:
