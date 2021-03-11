@@ -33,6 +33,7 @@ texture = ExtResource( 4 )
 script = ExtResource( 5 )
 
 [node name="shallow_label" type="Sprite" parent="."]
+visible = false
 modulate = Color( 1, 1, 1, 0.498039 )
 position = Vector2( 120, 150 )
 scale = Vector2( 0.606539, 0.606539 )

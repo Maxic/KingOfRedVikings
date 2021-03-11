@@ -3,19 +3,11 @@ extends TileMap
 
 # Declare member variables here. Examples:
 var checkpoints_passed
-var finished 
 var timer_parent = preload("res://UI.tscn")
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	checkpoints_passed = 0
-	finished = false
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 
 
 func _on_checkpoint1_body_entered(body):
@@ -23,7 +15,6 @@ func _on_checkpoint1_body_entered(body):
 		if checkpoints_passed == 0:
 			checkpoints_passed = 1
 			get_node("../../UI/checkpoint_label").triggered = true
-			
 
 func _on_checkpoint2_body_entered(body):
 	if body.name == "body":
@@ -76,6 +67,8 @@ func _on_checkpoint9_body_entered(body):
 func _on_finish_body_entered(body):
 	if body.name == "body":
 		if checkpoints_passed == 9:
-			finished = true
 			get_node("../../UI/TimerDisplay/ms").stop()
 			get_node("../../UI/TimerDisplay").finished = true
+			get_node("../../dinghy/body").finished = true
+
+
