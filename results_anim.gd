@@ -1,11 +1,10 @@
-extends Sprite
+extends AnimatedSprite
 
 
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var finished = false
-var shown = false
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,7 +13,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if finished && !shown:
-		self.visible = true
-		self.shown = true
-
+	if get_node('../results').finished:
+		if Input.is_action_just_pressed("boost"):
+			self.visible = true
+			get_node('../results').visible = false
+			self.play()

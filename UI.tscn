@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://timerdisplay.gd" type="Script" id=1]
 [ext_resource path="res://timer.tscn" type="PackedScene" id=2]
@@ -17,6 +17,8 @@
 [ext_resource path="res://assets/Coder's Crux.ttf" type="DynamicFontData" id=15]
 [ext_resource path="res://assets/results.png" type="Texture" id=16]
 [ext_resource path="res://results.gd" type="Script" id=17]
+[ext_resource path="res://assets/result_done.png" type="Texture" id=18]
+[ext_resource path="res://results_anim.gd" type="Script" id=19]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 3 )
@@ -129,12 +131,18 @@ scale = Vector2( 0.606539, 0.606539 )
 texture = ExtResource( 8 )
 script = ExtResource( 6 )
 
-[node name="results" type="AnimatedSprite" parent="."]
+[node name="results" type="Sprite" parent="."]
+visible = false
+position = Vector2( 88.2986, 82.3526 )
+texture = ExtResource( 18 )
+script = ExtResource( 17 )
+
+[node name="results_anim" type="AnimatedSprite" parent="."]
 visible = false
 position = Vector2( 88.2986, 82.3526 )
 frames = SubResource( 12 )
 animation = "results"
-script = ExtResource( 17 )
+script = ExtResource( 19 )
 
 [node name="TimerDisplay" type="RichTextLabel" parent="."]
 anchor_left = 1.0
