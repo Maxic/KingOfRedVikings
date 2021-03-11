@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://engine.gd" type="Script" id=1]
 [ext_resource path="res://assets/witboot.png" type="Texture" id=2]
 [ext_resource path="res://Camera.gd" type="Script" id=3]
+[ext_resource path="res://assets/engine.ogg" type="AudioStream" id=4]
 [ext_resource path="res://BowSplashParticleMat.tres" type="Material" id=5]
 
 [sub_resource type="PhysicsMaterial" id=1]
@@ -11,11 +12,11 @@ absorbent = true
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 2 )
-region = Rect2( 32, 0, 16, 21 )
+region = Rect2( 0, 0, 16, 21 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 16, 21 )
+region = Rect2( 32, 0, 16, 21 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 2 )
@@ -33,12 +34,12 @@ region = Rect2( 48, 0, 16, 21 )
 animations = [ {
 "frames": [ SubResource( 2 ) ],
 "loop": true,
-"name": "right",
+"name": "left",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 3 ) ],
 "loop": true,
-"name": "left",
+"name": "right",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 4 ) ],
@@ -92,4 +93,8 @@ z_index = -1
 amount = 100
 lifetime = 0.2
 process_material = ExtResource( 5 )
+
+[node name="EngineSound" type="AudioStreamPlayer2D" parent="body"]
+stream = ExtResource( 4 )
+autoplay = true
 [connection signal="body_entered" from="body" to="body" method="_on_body_body_entered"]

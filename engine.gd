@@ -13,6 +13,7 @@ var wake = preload("res://Wake.tscn")
 # Initializations
 var direction: Vector2 = Vector2(0,0)
 var wake_instance
+var normalized_velocity
 var disable_control = true
 
 func _ready():
@@ -22,7 +23,11 @@ func _process(delta):
 	var true_velocity = sqrt(pow(linear_velocity.x,2)+pow(linear_velocity.y,2)) *.15
 	bowsplash_pm.initial_velocity = true_velocity
 
-	get_node("../../UI/SpeedDisplay").value = ((true_velocity/60) *100)
+	normalized_velocity = true_velocity/60
+
+	get_node("../../UI/SpeedDisplay").value = normalized_velocity * 100
+	get_node("EngineSound").pitch_scale = (1 * normalized_velocity) +2
+	print(get_node("EngineSound").pitch_scale)
 
 	# Wake particles
 	if abs(true_velocity) > 4:
@@ -34,7 +39,6 @@ func _process(delta):
 		get_node("../").add_child(wake_instance)
 		
 	
-
 	if Input.is_action_pressed("ui_left") and going_fast(linear_velocity):
 		$BoatSprite.play("left")
 	elif Input.is_action_pressed("ui_right")and going_fast(linear_velocity):
