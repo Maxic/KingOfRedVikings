@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://timerdisplay.gd" type="Script" id=1]
 [ext_resource path="res://timer.tscn" type="PackedScene" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://assets/start_lights.png" type="Texture" id=7]
 [ext_resource path="res://assets/shallow.png" type="Texture" id=8]
 [ext_resource path="res://start_sequence.gd" type="Script" id=9]
+[ext_resource path="res://assets/speed_outline.png" type="Texture" id=10]
+[ext_resource path="res://assets/speed_bar.png" type="Texture" id=11]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 3 )
@@ -107,6 +109,19 @@ frames = SubResource( 11 )
 centered = false
 offset = Vector2( -28, 0 )
 script = ExtResource( 9 )
+
+[node name="SpeedDisplay" type="TextureProgress" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 1.10445
+margin_top = -19.0
+margin_right = 65.1045
+value = 100.0
+texture_over = ExtResource( 10 )
+texture_progress = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="timeout" from="TimerDisplay/ms" to="TimerDisplay" method="_on_ms_timeout"]
 [connection signal="animation_finished" from="Control/start_sequence" to="Control/start_sequence" method="_on_start_sequence_animation_finished"]
 [connection signal="animation_finished" from="Control/start_sequence" to="TimerDisplay" method="_on_start_sequence_animation_finished"]
