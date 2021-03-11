@@ -34,6 +34,7 @@ func _process(delta):
 		get_node("../").add_child(wake_instance)
 		
 	
+
 	if Input.is_action_pressed("ui_left") and going_fast(linear_velocity):
 		$BoatSprite.play("left")
 	elif Input.is_action_pressed("ui_right")and going_fast(linear_velocity):
@@ -41,6 +42,9 @@ func _process(delta):
 	elif Input.is_action_pressed("boost") and Input.is_action_pressed("ui_up"):
 		$BoatSprite.play("boost")	
 	else:
+		$BoatSprite.play("normal")
+
+	if disable_control:
 		$BoatSprite.play("normal")
 
 func going_fast(velocity):
