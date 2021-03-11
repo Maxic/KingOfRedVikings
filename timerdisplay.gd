@@ -21,7 +21,6 @@ func _process(delta):
 	if finished:
 		self.rect_position = Vector2(10, 82)
 		self.get_node("./ms").stop()
-		self.rect_position = Vector2(20, 60)
 		finished = false
 		blinking = true
 	if blinking:

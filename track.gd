@@ -78,5 +78,6 @@ func _on_finish_body_entered(body):
 		if checkpoints_passed == 9:
 			get_node("../../UI/TimerDisplay").finished = true
 			get_node("../../dinghy/body").disable_control = true
+			get_node("../../UI/results").finished = true
 
 

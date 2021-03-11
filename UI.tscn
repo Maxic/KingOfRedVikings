@@ -16,58 +16,55 @@
 [ext_resource path="res://assets/minimap_player.png" type="Texture" id=14]
 [ext_resource path="res://assets/Coder's Crux.ttf" type="DynamicFontData" id=15]
 [ext_resource path="res://assets/results.png" type="Texture" id=16]
+[ext_resource path="res://results.gd" type="Script" id=17]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 3 )
 shader_param/tile_factor = Vector2( 1, 1 )
 shader_param/aspect_ratio = 1.0
 
-[sub_resource type="CanvasItemMaterial" id=12]
+[sub_resource type="CanvasItemMaterial" id=2]
 
-[sub_resource type="AtlasTexture" id=14]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 16 )
 region = Rect2( 0, 0, 176, 64 )
 
-[sub_resource type="AtlasTexture" id=15]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 16 )
 region = Rect2( 176, 0, 176, 64 )
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 16 )
 region = Rect2( 352, 0, 176, 64 )
 
-[sub_resource type="AtlasTexture" id=17]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 16 )
 region = Rect2( 528, 0, 176, 64 )
 
-[sub_resource type="AtlasTexture" id=18]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 16 )
 region = Rect2( 704, 0, 176, 64 )
 
-[sub_resource type="AtlasTexture" id=19]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 16 )
 region = Rect2( 880, 0, 176, 64 )
 
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 16 )
 region = Rect2( 1056, 0, 176, 64 )
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 16 )
 region = Rect2( 1232, 0, 176, 64 )
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 16 )
 region = Rect2( 1408, 0, 176, 64 )
 
-[sub_resource type="AtlasTexture" id=23]
-atlas = ExtResource( 16 )
-region = Rect2( 1584, 0, 176, 64 )
-
-[sub_resource type="SpriteFrames" id=24]
+[sub_resource type="SpriteFrames" id=12]
 animations = [ {
-"frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
-"loop": true,
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"loop": false,
 "name": "results",
 "speed": 10.0
 } ]
@@ -77,37 +74,37 @@ outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 15 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 7 )
 region = Rect2( 0, 0, 102, 64 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 7 )
 region = Rect2( 102, 0, 102, 64 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 7 )
 region = Rect2( 204, 0, 102, 64 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 7 )
 region = Rect2( 306, 0, 102, 64 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 7 )
 region = Rect2( 408, 0, 102, 64 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 7 )
 region = Rect2( 510, 0, 102, 64 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 7 )
 region = Rect2( 612, 0, 102, 64 )
 
-[sub_resource type="SpriteFrames" id=11]
+[sub_resource type="SpriteFrames" id=21]
 animations = [ {
-"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 10 ) ],
+"frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 20 ) ],
 "loop": false,
 "name": "default",
 "speed": 4.0
@@ -126,18 +123,18 @@ script = ExtResource( 5 )
 [node name="shallow_label" type="Sprite" parent="."]
 visible = false
 modulate = Color( 1, 1, 1, 0.498039 )
-material = SubResource( 12 )
+material = SubResource( 2 )
 position = Vector2( 120, 150 )
 scale = Vector2( 0.606539, 0.606539 )
 texture = ExtResource( 8 )
 script = ExtResource( 6 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="results" type="AnimatedSprite" parent="."]
+visible = false
 position = Vector2( 88.2986, 82.3526 )
-frames = SubResource( 24 )
+frames = SubResource( 12 )
 animation = "results"
-frame = 5
-playing = true
+script = ExtResource( 17 )
 
 [node name="TimerDisplay" type="RichTextLabel" parent="."]
 anchor_left = 1.0
@@ -169,7 +166,7 @@ __meta__ = {
 }
 
 [node name="start_sequence" type="AnimatedSprite" parent="Control"]
-frames = SubResource( 11 )
+frames = SubResource( 21 )
 centered = false
 offset = Vector2( -28, 0 )
 script = ExtResource( 9 )
@@ -197,5 +194,5 @@ script = ExtResource( 13 )
 [node name="minimap" parent="." instance=ExtResource( 12 )]
 scale = Vector2( 0.01, 0.01 )
 [connection signal="timeout" from="TimerDisplay/ms" to="TimerDisplay" method="_on_ms_timeout"]
-[connection signal="animation_finished" from="Control/start_sequence" to="Control/start_sequence" method="_on_start_sequence_animation_finished"]
 [connection signal="animation_finished" from="Control/start_sequence" to="TimerDisplay" method="_on_start_sequence_animation_finished"]
+[connection signal="animation_finished" from="Control/start_sequence" to="Control/start_sequence" method="_on_start_sequence_animation_finished"]
