@@ -262,13 +262,12 @@ __meta__ = {
 }
 
 [node name="minimap" type="Sprite" parent="."]
-position = Vector2( 214.532, 23.283 )
-scale = Vector2( 0.15, 0.15 )
+position = Vector2( 210, 32 )
 texture = ExtResource( 12 )
 
 [node name="minimap_player" type="Sprite" parent="."]
 show_behind_parent = true
-position = Vector2( 201, 20 )
+position = Vector2( 192, 28 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 14 )
 script = ExtResource( 13 )
