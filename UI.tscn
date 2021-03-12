@@ -207,5 +207,5 @@ texture = ExtResource( 14 )
 script = ExtResource( 13 )
 [connection signal="animation_finished" from="results_anim" to="TimerDisplay" method="_on_results_anim_animation_finished"]
 [connection signal="timeout" from="TimerDisplay/ms" to="TimerDisplay" method="_on_ms_timeout"]
-[connection signal="animation_finished" from="Control/start_sequence" to="Control/start_sequence" method="_on_start_sequence_animation_finished"]
 [connection signal="animation_finished" from="Control/start_sequence" to="TimerDisplay" method="_on_start_sequence_animation_finished"]
+[connection signal="animation_finished" from="Control/start_sequence" to="Control/start_sequence" method="_on_start_sequence_animation_finished"]

@@ -26,7 +26,7 @@ noise = SubResource( 3 )
 [sub_resource type="ShaderMaterial" id=5]
 shader = ExtResource( 4 )
 shader_param/tile_factor = Vector2( 93.75, 75 )
-shader_param/aspect_ratio = 0.667
+shader_param/aspect_ratio = 0.8
 
 [sub_resource type="CanvasItemMaterial" id=6]
 blend_mode = 2
