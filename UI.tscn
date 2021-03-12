@@ -60,16 +60,16 @@ region = Rect2( 1056, 0, 176, 64 )
 atlas = ExtResource( 16 )
 region = Rect2( 1232, 0, 176, 64 )
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 16 )
 region = Rect2( 1584, 0, 176, 64 )
 
 [sub_resource type="SpriteFrames" id=12]
 animations = [ {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 22 ) ],
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
 "loop": false,
 "name": "results",
-"speed": 10.0
+"speed": 8.0
 } ]
 
 [sub_resource type="DynamicFont" id=13]
@@ -148,9 +148,9 @@ script = ExtResource( 19 )
 [node name="TimerDisplay" type="RichTextLabel" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -64.0
+margin_left = -236.0
 margin_top = 4.0
-margin_right = 6.0
+margin_right = -166.0
 margin_bottom = 24.0
 rect_clip_content = false
 custom_fonts/normal_font = SubResource( 13 )
@@ -196,11 +196,12 @@ __meta__ = {
 }
 
 [node name="minimap_cherrybay" parent="." instance=ExtResource( 12 )]
+position = Vector2( 198, 4 )
 scale = Vector2( 0.01, 0.01 )
 
 [node name="minimap_player" type="Sprite" parent="."]
 show_behind_parent = true
-position = Vector2( 3.76338, 16.9265 )
+position = Vector2( 201, 20 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 14 )
 script = ExtResource( 13 )
