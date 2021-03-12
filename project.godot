@@ -15,15 +15,15 @@ _global_script_class_icons={
 
 [application]
 
-config/name="KingOfRedVikings"
+config/name="Cruisin' Caribbean: Grand Prix"
 run/main_scene="res://TitleScreen.tscn"
 
 [display]
 
 window/size/width=240
 window/size/height=160
-window/size/test_width=1200
-window/size/test_height=800
+window/size/test_width=720
+window/size/test_height=480
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
