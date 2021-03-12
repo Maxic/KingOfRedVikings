@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://sea_normal.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tile_set_sea_normal.tres" type="TileSet" id=2]
@@ -9,7 +9,8 @@
 [ext_resource path="res://courseArea.gd" type="Script" id=7]
 [ext_resource path="res://track.gd" type="Script" id=8]
 [ext_resource path="res://tile_set_foilage.tres" type="TileSet" id=9]
-[ext_resource path="res://assets/checkpoint.wav" type="AudioStream" id=10]
+[ext_resource path="res://assets/checkpoint_alt.wav" type="AudioStream" id=10]
+[ext_resource path="res://assets/finish.wav" type="AudioStream" id=11]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 5 )
@@ -171,6 +172,9 @@ shape = SubResource( 11 )
 [node name="checkpoint" type="AudioStreamPlayer2D" parent="game_objects"]
 stream = ExtResource( 10 )
 max_distance = 1e+13
+
+[node name="finish_audio" type="AudioStreamPlayer2D" parent="game_objects"]
+stream = ExtResource( 11 )
 
 [node name="foilage" type="TileMap" parent="."]
 tile_set = ExtResource( 9 )
