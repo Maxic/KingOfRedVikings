@@ -15,9 +15,15 @@ var direction: Vector2 = Vector2(0,0)
 var wake_instance
 var normalized_velocity
 var disable_control = true
+var boatsprite
 
 func _ready():
-	pass
+	randomize()
+	var options = [$BoatWhite,$BoatYellow,$BoatGreen]
+	var rand_index:int = randi() % options.size()
+	boatsprite = options[rand_index]
+	boatsprite.visible = true 
+	
 	
 func _process(delta):
 	var true_velocity = sqrt(pow(linear_velocity.x,2)+pow(linear_velocity.y,2)) *.15
@@ -39,16 +45,16 @@ func _process(delta):
 		
 	
 	if Input.is_action_pressed("ui_left") and going_fast(linear_velocity):
-		$BoatSprite.play("left")
+		boatsprite.play("left")
 	elif Input.is_action_pressed("ui_right")and going_fast(linear_velocity):
-		$BoatSprite.play("right")
+		boatsprite.play("right")
 	elif Input.is_action_pressed("boost") and Input.is_action_pressed("ui_up"):
-		$BoatSprite.play("boost")	
+		boatsprite.play("boost")	
 	else:
-		$BoatSprite.play("normal")
+		boatsprite.play("normal")
 
 	if disable_control:
-		$BoatSprite.play("normal")
+		boatsprite.play("normal")
 
 func going_fast(velocity):
 	

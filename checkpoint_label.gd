@@ -20,5 +20,3 @@ func _process(delta):
 			self.visible = false
 			self.modulate.a = 1
 			self.triggered = false
-		
-
