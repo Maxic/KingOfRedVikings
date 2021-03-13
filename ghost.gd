@@ -19,13 +19,29 @@ var boatsprite
 var input_data = {}
 var frame_count = 0
 var finished = false
+var ghost_data
 
 func _ready():
-	randomize()
-	var options = [$BoatWhite,$BoatYellow,$BoatGreen]
-	var rand_index:int = randi() % options.size()
-	boatsprite = options[rand_index]
+	# Set boat
+	boatsprite = $boatWhite
 	boatsprite.visible = true 
+	
+	# Load ghost data
+	var file = File.new()
+	if not file.file_exists("user://ghost.sav"):
+		print("No file saved!")
+		return
+
+	# Open existing file
+	if file.open("user://saved_game.sav", File.READ) != 0:
+		print("Error opening file")
+		return
+
+	# Get the data
+	ghost_data = {}
+	ghost_data.parse_json(file.get_line())
+	print(ghost_data)
+	
 	
 func _process(delta):
 	

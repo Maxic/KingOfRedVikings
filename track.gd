@@ -87,6 +87,7 @@ func _on_finish_body_entered(body):
 			get_node("finish_audio").play(0.0)
 			get_node("../../UI/TimerDisplay").finished = true
 			get_node("../../dinghy/body").disable_control = true
+			get_node("../../dinghy/body").finished = true
 			get_node("../../UI/results").finished = true
 
 
