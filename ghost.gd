@@ -23,7 +23,7 @@ var ghost_data
 
 func _ready():
 	# Set boat
-	boatsprite = $boatWhite
+	boatsprite = $BoatWhite
 	boatsprite.visible = true 
 	
 	# Load ghost data
@@ -33,14 +33,15 @@ func _ready():
 		return
 
 	# Open existing file
-	if file.open("user://saved_game.sav", File.READ) != 0:
+	if file.open("user://ghost.sav", File.READ) != 0:
 		print("Error opening file")
 		return
 
 	# Get the data
 	ghost_data = {}
-	ghost_data.parse_json(file.get_line())
-	print(ghost_data)
+	ghost_data = parse_json(file.get_line())
+	print(ghost_data["0"])
+	print(ghost_data["1021"])
 	
 	
 func _process(delta):
@@ -66,8 +67,7 @@ func _process(delta):
 
 	normalized_velocity = true_velocity/60
 
-	get_node("../../UI/SpeedDisplay").value = normalized_velocity * 100
-	get_node("EngineSound").pitch_scale = (5 * normalized_velocity) +3
+	
 
 	# Wake particles
 	if abs(true_velocity) > 4:
@@ -79,17 +79,17 @@ func _process(delta):
 		get_node("../").add_child(wake_instance)
 		
 	
-	if Input.is_action_pressed("ui_left") and going_fast(linear_velocity):
-		boatsprite.play("left")
-	elif Input.is_action_pressed("ui_right")and going_fast(linear_velocity):
-		boatsprite.play("right")
-	elif Input.is_action_pressed("boost") and Input.is_action_pressed("ui_up"):
-		boatsprite.play("boost")	
-	else:
-		boatsprite.play("normal")
-
-	if disable_control:
-		boatsprite.play("normal")
+#	if Input.is_action_pressed("ui_left") and going_fast(linear_velocity):
+#		boatsprite.play("left")
+#	elif Input.is_action_pressed("ui_right")and going_fast(linear_velocity):
+#		boatsprite.play("right")
+#	elif Input.is_action_pressed("boost") and Input.is_action_pressed("ui_up"):
+#		boatsprite.play("boost")	
+#	else:
+#		boatsprite.play("normal")
+#
+#	if disable_control:
+#		boatsprite.play("normal")
 
 func going_fast(velocity):
 	
