@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=2]
+[gd_scene load_steps=60 format=2]
 
 [ext_resource path="res://timerdisplay.gd" type="Script" id=1]
 [ext_resource path="res://timer.tscn" type="PackedScene" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://assets/countdown.ogg" type="AudioStream" id=20]
 [ext_resource path="res://assets/intro.png" type="Texture" id=21]
 [ext_resource path="res://intro.gd" type="Script" id=22]
+[ext_resource path="res://fpsCounter.gd" type="Script" id=23]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 3 )
@@ -277,7 +278,19 @@ position = Vector2( 88, 82 )
 frames = SubResource( 36 )
 animation = "intro"
 script = ExtResource( 22 )
+
+[node name="fpscounter" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -40.0
+margin_top = -14.0
+script = ExtResource( 23 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="animation_finished" from="results_anim" to="TimerDisplay" method="_on_results_anim_animation_finished"]
 [connection signal="timeout" from="TimerDisplay/ms" to="TimerDisplay" method="_on_ms_timeout"]
-[connection signal="animation_finished" from="Control/start_sequence" to="Control/start_sequence" method="_on_start_sequence_animation_finished"]
 [connection signal="animation_finished" from="Control/start_sequence" to="TimerDisplay" method="_on_start_sequence_animation_finished"]
+[connection signal="animation_finished" from="Control/start_sequence" to="Control/start_sequence" method="_on_start_sequence_animation_finished"]
