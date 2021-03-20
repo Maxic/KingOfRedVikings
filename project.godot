@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="KingOfRedVikings"
+config/name="Cruisin' Caribbean: Grand Prix"
 run/main_scene="res://TitleScreen.tscn"
 
 [display]
