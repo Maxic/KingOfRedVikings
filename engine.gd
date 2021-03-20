@@ -50,7 +50,7 @@ func _process(delta):
 
 	normalized_velocity = true_velocity/60
 
-	#get_node("../../UI/SpeedDisplay").value = normalized_velocity * 100
+	get_node("../../UI/SpeedDisplay").value = normalized_velocity * 100
 	get_node("EngineSound").pitch_scale = (5 * normalized_velocity) +3
 
 	# Wake particles
