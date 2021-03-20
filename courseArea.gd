@@ -19,3 +19,14 @@ func _on_shallows_body_exited(body):
 	if body.name == 'body':
 		body.linear_damp = old_damp
 		get_node("../../../UI/shallow_label").visible = false
+
+
+func _on_Area2D_body_entered(body):
+	if body.name == 'body':
+		old_damp = body.linear_damp
+		body.linear_damp = 5
+
+func _on_Area2D_body_exited(body):
+	if body.name == 'body':
+		body.linear_damp = old_damp
+
