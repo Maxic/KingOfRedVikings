@@ -14,7 +14,7 @@ var wake = preload("res://Wake.tscn")
 var direction: Vector2 = Vector2(0,0)
 var wake_instance
 var normalized_velocity
-var disable_control = true
+var disable_control = false
 var boatsprite
 var input_data = {}
 var frame_count = 0
