@@ -159,7 +159,7 @@ animations = [ {
 radius = 6.47775
 height = 7.39357
 
-[node name="dinghy" type="Node2D"]
+[node name="dinghy_tutorial" type="Node2D"]
 z_index = 10
 
 [node name="body" type="RigidBody2D" parent="."]

@@ -14,7 +14,7 @@ var wake = preload("res://Wake.tscn")
 var direction: Vector2 = Vector2(0,0)
 var wake_instance
 var normalized_velocity
-var disable_control = true
+var disable_control = false
 var boatsprite
 var input_data = {}
 var frame_count = 0
@@ -50,7 +50,7 @@ func _process(delta):
 
 	normalized_velocity = true_velocity/60
 
-	get_node("../../UI/SpeedDisplay").value = normalized_velocity * 100
+	#get_node("../../UI/SpeedDisplay").value = normalized_velocity * 100
 	get_node("EngineSound").pitch_scale = (5 * normalized_velocity) +3
 
 	# Wake particles
